@@ -7,7 +7,6 @@ FROM mashape/docker-java7
 MAINTAINER Marco Palladino, marco@mashape.com
 
 ENV CASSANDRA_VERSION 2.0.12-1
-ENV CASSANDRA_CONFIG /etc/cassandra
 
 # adding repo to yum
 RUN echo -e "[datastax]\nname = DataStax Repo for Apache Cassandra\nbaseurl = http://rpm.datastax.com/community\nenabled = 1\ngpgcheck = 0" > /etc/yum.repos.d/datastax.repo
