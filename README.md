@@ -1,4 +1,4 @@
-Docker Cassandra 2.x
+Docker Cassandra 2.1.3
 =========
 
-This is a Dockerfile for starting a CentOS container with [Cassandra](http://cassandra.apache.org/) `2.0.12` installed.
+This is a Dockerfile for starting a CentOS container with [Cassandra](http://cassandra.apache.org/) `2.1.3` installed.
