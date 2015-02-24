@@ -1,12 +1,12 @@
 # java
 #
-# VERSION       Cassandra 2.x
+# VERSION       Cassandra 2.1.3
 
 # use the centos base image provided by dotCloud
 FROM mashape/docker-java7
 MAINTAINER Marco Palladino, marco@mashape.com
 
-ENV CASSANDRA_VERSION 2.0.12-1
+ENV CASSANDRA_VERSION 2.1.3-1
 
 # adding repo to yum
 RUN echo -e "[datastax]\nname = DataStax Repo for Apache Cassandra\nbaseurl = http://rpm.datastax.com/community\nenabled = 1\ngpgcheck = 0" > /etc/yum.repos.d/datastax.repo
