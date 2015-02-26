@@ -19,4 +19,4 @@ RUN sed -i -r -e 's@^# broadcast_rpc_address.*$@broadcast_rpc_address: 127\.0\.0
 
 CMD ["cassandra", "-f"]
 
-EXPOSE 22 8888 7000 7001 7199 7199 9042 9160
+EXPOSE 22 8888 7000 7001 7199 9042 9160
