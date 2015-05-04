@@ -1,12 +1,8 @@
-# docker-cassandra
+# Cassandra Dockerfile
 
 A Docker image for running a single-node [Cassandra](http://cassandra.apache.org/) cluster.
 
 - Dockerhub repo: [mashape/cassandra](https://registry.hub.docker.com/u/mashape/cassandra/)
-
-## Supported tags and respective Dockerfile links
-
-- `latest` - *([Dockerfile](https://github.com/Mashape/docker-cassandra/blob/master/Dockerfile))*
 
 ## How to use this image
 
@@ -16,7 +12,7 @@ To start a container running this image:
 $ docker run -d -p 9042:9042 --name cassandra mashape/cassandra
 ```
 
-This container will expose your cluster on your host port `9042`, the default Cassandra port. If you wish to change this port, keep in mind that the `-p` arguments expects: `host-port:container-port`. Feel free to change the host port.
+This container will expose your cluster on your host port `9042`, the default Cassandra port.
 
 ### Using a custom Cassandra configuration
 
