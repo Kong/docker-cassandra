@@ -4,6 +4,10 @@ A Docker image for running a single-node [Cassandra](http://cassandra.apache.org
 
 - Dockerhub repo: [mashape/cassandra](https://registry.hub.docker.com/u/mashape/cassandra/)
 
+## Supported tags and respective Dockerfile links
+
+- `latest` - *([Dockerfile](https://github.com/Mashape/docker-cassandra/blob/master/Dockerfile))*
+
 ## How to use this image
 
 To start a container running this image:
@@ -14,9 +18,7 @@ $ docker run -d -p 9042:9042 --name cassandra mashape/cassandra
 
 This container will expose your cluster on your host port `9042`, the default Cassandra port. If you wish to change this port, keep in mind that the `-p` arguments expects: `host-port:container-port`. Feel free to change the host port.
 
-#### Volumes
-
-###### Using a custom Cassandra configuration
+### Using a custom Cassandra configuration
 
 This container stores the Cassandra configuration (usually in `/etc/cassandra/`) in a [Data Volume][docker-data-volume]. You can mount this volume from your host machine by doing so:
 
@@ -28,7 +30,7 @@ $ docker run -d \
     mashape/cassandra
 ```
 
-###### Data storage
+### Data storage
 
 This container also stores the actual storage data (usually in `/var/lib/cassandra/`) in a [Data Volume][docker-data-volume]. You can mount this volume from your host machine by doing so:
 
@@ -42,11 +44,11 @@ $ docker run -d \
 
 ## User Feedback
 
-#### Issues
+### Issues
 
 If you have any problems with or questions about this image, please contact us through a [GitHub issue][github-new-issue].
 
-#### Contributing
+### Contributing
 
 You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
