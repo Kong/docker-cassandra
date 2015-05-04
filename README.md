@@ -1,8 +1,10 @@
-# mashape/cassandra
+# docker-cassandra
 
-A Docker image for running a single-node [Cassandra](http://cassandra.apache.org/) cluster. Hosted on Dockerhub at [mashape/cassandra](https://registry.hub.docker.com/u/mashape/cassandra/).
+A Docker image for running a single-node [Cassandra](http://cassandra.apache.org/) cluster.
 
-# Usage
+- Dockerhub repo: [mashape/cassandra](https://registry.hub.docker.com/u/mashape/cassandra/)
+
+## How to use this image
 
 To start a container running this image:
 
@@ -14,13 +16,13 @@ This container will expose your cluster on your host port `9042`, the default Ca
 
 #### Volumes
 
-###### Configuration
+###### Using a custom Cassandra configuration
 
-This container stores the Cassandra configuration (usually in `/etc/cassandra/`) in a Docker volume. You can mount this volume from your host machine by doing so:
+This container stores the Cassandra configuration (usually in `/etc/cassandra/`) in a [Data Volume][docker-data-volume]. You can mount this volume from your host machine by doing so:
 
 ```shell
 $ docker run -d \
-    -v /path/to/your/etc/cassandra:/etc/cassandra \
+    -v /path/to/your/etc/cassandra/:/etc/cassandra \
     -p 9042:9042 \
     --name cassandra \
     mashape/cassandra
@@ -28,24 +30,27 @@ $ docker run -d \
 
 ###### Data storage
 
-This container also stores the actual data (usually in `/var/lib/cassandra/`) in a Docker volume. You can mount this volume from your host machine by doing so:
+This container also stores the actual storage data (usually in `/var/lib/cassandra/`) in a [Data Volume][docker-data-volume]. You can mount this volume from your host machine by doing so:
 
 ```shell
 $ docker run -d \
-    -v /path/to/your/var/lib/cassandra:/var/lib/cassandra \
+    -v /path/to/your/var/lib/cassandra/:/var/lib/cassandra \
     -p 9042:9042 \
     --name cassandra \
     mashape/cassandra
 ```
 
-##### OS X with boot2docker
+## User Feedback
 
-To run docker on OS X, follow the instructions at [https://docs.docker.com/installation/mac/](https://docs.docker.com/installation/mac/)
+#### Issues
 
-Once the environment is ready, open the port Cassandra will be using on your boot2docker VM (by default `9042`):
+If you have any problems with or questions about this image, please contact us through a [GitHub issue][github-new-issue].
 
-```shell
-$ boot2docker down # be sure boot2docker is not running
-$ VBoxManage modifyvm "boot2docker-vm" --natpf1 "cassandra-port,tcp,,9042,,9042"
-$ boot2docker up
-```
+#### Contributing
+
+You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
+
+Before you start to code, we recommend discussing your plans through a [GitHub issue][github-new-issue], especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
+
+[github-new-issue]: https://github.com/Mashape/docker-cassandra/issues/new
+[docker-data-volume]: https://docs.docker.com/userguide/dockervolumes/
